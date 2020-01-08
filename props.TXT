@@ -1,0 +1,54 @@
+import React from 'react';
+import ReactDom from 'react-dom';
+import Proptypes from 'prop-types';
+
+
+/*function App(){
+return(
+    <Employee name='john' age='21' desc='hi'></Employee>
+    <Employee name='ravi' age='22' desc='hello'></Employee>
+)
+}
+function Employee(props){
+    return(
+        <div>
+        <p>Employee Name{props.name}</p> 
+        <p> Employee age{props.age}</p>
+        <p> Employee desc{props.desc}</p>
+         </div>
+
+    )
+
+}
+ReactDom.render(<App/>,document.getElementById('root'));
+*/
+
+function App(){
+    return(
+        <Employee name='john' age='21' desc='hi'></Employee>
+        <Employee name='ravi' age='22' desc=''></Employee>
+        <Employee name='shivam' age='25' desc='bye'></Employee>
+
+    )
+    }
+    function Employee(props){
+        return(
+            <div>
+            <p>Employee Name{props.name}</p> 
+            <p> Employee age{props.age}</p>
+            <p> Employee desc{props.desc}</p>
+             </div>
+    
+        )
+    
+    }
+    Employee.proptypes={
+        name:Proptypes.string.isRequired,
+        age:Proptypes.number,
+        desc:Proptypes.string,
+    }
+
+    Employee.defaultProps={
+        desc:'Employee'
+    }
+    ReactDom.render(<App/>,document.getElementById('root'));

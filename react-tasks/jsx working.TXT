@@ -1,0 +1,38 @@
+//Babel compiles JSX down to React.createElement()calls.
+ 
+/*
+const element=(
+    <h1 className='greeting'> hello Earth</h1>
+);
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
+*/
+/*
+// the above statement is breaks jsx to  React.createElement()calls using babel.
+
+const element=React.createElement(
+    'h1',
+    {className:'greeting'},
+    'hello ravi!!!'
+);
+
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
+*/
+
+//NOTE: this structure is simplified  to above.
+//React.createElement() performs a few checks to help you write bug-free code but essentially it creates an object like this:
+
+/*
+const element={   //this objects are called react elements
+    type:'h1',    
+    props:{
+        className:'greeting',
+        children:'Hello, World!!'
+    }
+};
+*/

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person';
-class App extends Component {
+class App extends Component /*(Component->we can use (React.Component))*/ {
   state = {
     persons: [
       { id: 'asfa1', name: 'Max', age: 28 },

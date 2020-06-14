@@ -1,0 +1,36 @@
+import React, {useState} from "react";
+import "./styles.css";
+import GoogleLogin from 'react-google-login';
+
+    export default function App() {
+
+    const [name, setName] = useState("");
+
+    const [email, setEmail] = useState("");
+
+    const [url, setUrl] = useState("");
+
+  const responseGoogle = ( response) =>{
+    setName(response.profileObj.name);
+    setEmail(response.profileObj.email);
+    setUrl(response.profileObj.imageUrl)
+    
+    console.log(response)
+  }
+  
+  return (
+    <div className="App">
+      <h1>Login with google</h1>
+      <h2>Welcome: {name}</h2>
+      <h2>Email: {email}</h2>
+      <img src={url} alt={name}/>
+        <GoogleLogin
+    clientId="123323792093-arnq1i31453iqsm3uu7gis00qifnfm55.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
+    </div>
+  );
+}
